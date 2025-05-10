@@ -1,0 +1,7 @@
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility default-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
