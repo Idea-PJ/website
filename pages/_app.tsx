@@ -1,7 +1,7 @@
-import FontRoot from "@/FontRoot";
+import AppRoot from "@/components/AppRoot";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (<FontRoot><Component {...pageProps} /></FontRoot>);
+  return (<AppRoot><Component {...pageProps} /></AppRoot>);
 }
