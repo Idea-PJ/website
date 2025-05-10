@@ -1,0 +1,13 @@
+@utility article-container {
+  @apply w-[700px] min-h-screen h-max py-[65px] flex flex-col gap-[35px];
+}
+
+@utility section-container {
+  @apply flex flex-col gap-[8px];
+}
+
+@utility section-body {
+    @apply b1 text-white/65
+}
+
+
