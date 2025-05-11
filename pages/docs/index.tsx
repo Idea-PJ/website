@@ -1,4 +1,5 @@
 import HeaderComp from "@/components/HeaderComp";
+import SectionNav from "@/components/SectionNav";
 import SideNav from "@/components/SideNav";
 import TerminalBlock from "@/components/TerminalBlock";
 import { cn } from "@/utils";
@@ -36,7 +37,7 @@ const frameworks = [
     id: "backend",
     name: "Back End",
     url: "/docs/backend",
-  }
+  },
 ];
 
 const CompanyLinks = () => {
@@ -81,7 +82,6 @@ const FrameworkList = () => {
   );
 };
 
-
 const DocPage = () => {
   return (
     <div className="w-screen min-h-screen flex flex-col">
@@ -92,12 +92,27 @@ const DocPage = () => {
           <section className="section-container">
             <h1 className="title1-primary">Getting Started</h1>
             <p className="section-body">
-              Our goal to make sure that your project delivers clients
+              Our goal is to make sure that your project delivers clients
               requirements without compromising the quality.
             </p>
+            <p className="section-body">
+              PJ framework are build with progressive, scable & community in mind.
+            </p>
+            <h5 className="s1-b text-white/75 mt-5">Progressive</h5>
+            <p className="section-body">By progress, we mean that our frameworks are design to grow with you. Either you are fresher into the industry or experince senior who is in field for decades, our frameworks are design to embrace productivity</p>
+            <h5 className="s1-b text-white/75 mt-5">Scable</h5>
+            <p className="section-body">Enterpise systems needs to scable. By scable we mean project need to efficient & need to be able to add more developer when needed.</p>
+            <h5 className="s1-b text-white/75 mt-5">Community</h5>
+            <p className="section-body">Framework is only reliable when there is strong community to help you when face issues & errors.</p>
           </section>
-          <section className="section-container">
+          <section className="section-container" id="installation">
             <h2 className="h2-primary">Installation</h2>
+            <p className="section-body">
+              PJ come with its own cli which you can use to create, update, matain & monitor your projects.
+            </p>
+            <p className="section-body">
+              First you need to install our cli globally on your machine.
+            </p>
             <TerminalBlock cmd="npm i @ideapj/cli">
               <span className="text-red-400">npm</span>{" "}
               <span className="text-teal-400">i</span>{" "}
@@ -105,7 +120,7 @@ const DocPage = () => {
               <span className="text-gray-400">@ideapj/cli</span>
             </TerminalBlock>
           </section>
-          <section className="section-container">
+          <section className="section-container" id="what-is-ideapj">
             <h2 className="h2-primary text-white/90">What is Idea PJ?</h2>
             <p className="section-body">
               Idea PJ consist of methologies, frameworks & tools that make sure
@@ -116,13 +131,24 @@ const DocPage = () => {
             </p>
             <CompanyLinks />
           </section>
-          <section className="section-container">
+          <section className="section-container" id="frameworks">
             <h2 className="h2-primary">Frameworks</h2>
-            <p className="section-body">PJ frameworks add more structure on other frameworks instead of trying to build everything from stretch. In that way developers who join to company are already familer with the frameworks & tools. Because of that we are able to reduce onboard time for developer to join the project or starting new project.</p>
-            <FrameworkList/>
+            <p className="section-body">
+              PJ frameworks add more structure on other frameworks instead of
+              trying to build everything from stretch.
+            </p>
+
+            <p className="section-body">
+              {" "}
+              In that way developers who join to company are already familer
+              with the frameworks & tools. Because of that we are able to reduce
+              onboard time for developer to join the project or starting new
+              project.
+            </p>
+            <FrameworkList />
           </section>
         </article>
-        <aside className="w-[300px] min-h-screen h-max"></aside>
+        <SectionNav />
       </main>
     </div>
   );
