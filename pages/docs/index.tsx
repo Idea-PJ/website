@@ -1,3 +1,4 @@
+import FooterComp from "@/components/Footer";
 import HeaderComp from "@/components/HeaderComp";
 import SectionNav from "@/components/SectionNav";
 import SideNav from "@/components/SideNav";
@@ -150,6 +151,7 @@ const DocPage = () => {
         </article>
         <SectionNav />
       </main>
+      <FooterComp/>
     </div>
   );
 };
