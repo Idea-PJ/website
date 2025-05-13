@@ -29,10 +29,10 @@ const AppRoot: React.FC<AppRootProps> = ({ children }) => {
   );
 };
 
-export const useAppContext = () => {
+export const useApp = () => {
   const props = useContext(AppContext);
   if (!props)
-    throw new Error("useAppContext must be used within an AppProvider");
+    throw new Error("useApp must be used within an AppProvider");
   return props;
 };
 

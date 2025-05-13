@@ -22,7 +22,7 @@ const TitleComp: React.FC<IProps> = ({ title, id, variant = "section" }) => {
       <Title
         className={cn(
           variant == "title" ? "title1-primary" : "h2-primary",
-          "w-max"
+          "w-max scroll-mt-[100px]"
         )}
         id={id}
       >

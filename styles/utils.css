@@ -6,3 +6,14 @@
   @apply transition-all duration-300 ease-in-out;
 }
 
+@utility fixed-screen {
+  @apply w-screen h-screen fixed top-0 left-0;
+}
+@utility fixed-screen-center {
+  @apply flex-center fixed-screen;
+}
+
+@utility flex-x {
+  @apply flex flex-col
+}
+

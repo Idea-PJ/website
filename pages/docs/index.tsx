@@ -138,14 +138,14 @@ const DocPage = () => {
             </p>
             <TerminalBlock
               cmd={{
-                copy: "npm i @ideapj/cli",
+                copy: "npm i @ideapj/cli -g",
                 comment: "install cli globally",
                 code: (
                   <>
                     <span className="text-red-400">npm</span>{" "}
                     <span className="text-teal-400">i</span>{" "}
+                    <span className="text-gray-400">@ideapj/cli</span>{" "}
                     <span className="text-yellow-400">-g</span>{" "}
-                    <span className="text-gray-400">@ideapj/cli</span>
                   </>
                 ),
               }}

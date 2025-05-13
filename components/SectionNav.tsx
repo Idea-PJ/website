@@ -45,6 +45,7 @@ const SectionNav: React.FC<IProps> = ({menus}) => {
     <button
       type="button"
       onClick={() => handleScrollTo(id)}
+      key={id}
       className={cn(
         "s1 text-white/50 default-transition section-nav-item",
         "text-left cursor-pointer",
