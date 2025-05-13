@@ -20,7 +20,7 @@ const HeaderComp: React.FC = () => {
           <div className="w-full h-[2px] bg-yellow-600 rounded-full"></div>
         </li>
         <li>
-          <Link href="/blog">Blog</Link>
+          <Link href="/guide">Guide</Link>
         </li>
       </ul>
     </header>

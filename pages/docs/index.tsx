@@ -1,6 +1,7 @@
 import FooterComp from "@/components/Footer";
 import HeaderComp from "@/components/HeaderComp";
 import SectionNav from "@/components/SectionNav";
+import TitleComp from "@/components/TitleComp";
 import SideNav from "@/components/SideNav";
 import TerminalBlock from "@/components/TerminalBlock";
 import { cn } from "@/utils";
@@ -91,38 +92,69 @@ const DocPage = () => {
         <SideNav />
         <article className="article-container">
           <section className="section-container">
-            <h1 className="title1-primary">Getting Started</h1>
+            <TitleComp title="Getting Started" variant="title"/>
             <p className="section-body">
               Our goal is to make sure that your project delivers clients
               requirements without compromising the quality.
             </p>
             <p className="section-body">
-              PJ framework are build with progressive, scable & community in mind.
+              PJ framework are build with progressive, scable & community in
+              mind.
             </p>
             <h5 className="s1-b text-white/75 mt-5">Progressive</h5>
-            <p className="section-body">By progress, we mean that our frameworks are design to grow with you. Either you are fresher into the industry or experince senior who is in field for decades, our frameworks are design to embrace productivity</p>
-            <h5 className="s1-b text-white/75 mt-5">Scable</h5>
-            <p className="section-body">Enterpise systems needs to scable. By scable we mean project need to efficient & need to be able to add more developer when needed.</p>
-            <h5 className="s1-b text-white/75 mt-5">Community</h5>
-            <p className="section-body">Framework is only reliable when there is strong community to help you when face issues & errors.</p>
-          </section>
-          <section className="section-container" id="installation">
-            <h2 className="h2-primary">Installation</h2>
             <p className="section-body">
-              PJ come with its own cli which you can use to create, update, matain & monitor your projects.
+              By progress, we mean that our frameworks are design to grow with
+              you. Either you are fresher into the industry or experince senior
+              who is in field for decades, our frameworks are design to embrace
+              productivity
+            </p>
+            <h5 className="s1-b text-white/75 mt-5">Scable</h5>
+            <p className="section-body">
+              Enterpise systems needs to scable. By scable we mean project need
+              to efficient & need to be able to add more developer when needed.
+            </p>
+            <h5 className="s1-b text-white/75 mt-5">Community</h5>
+            <p className="section-body">
+              Framework is only reliable when there is strong community to help
+              you when face issues & errors.
+            </p>
+          </section>
+          <section className="section-container">
+            <TitleComp id="installation" title="Installation"/>
+            <p className="section-body">
+              PJ come with its own cli which you can use to create, update,
+              matain & monitor your projects.
             </p>
             <p className="section-body">
               First you need to install our cli globally on your machine.
             </p>
-            <TerminalBlock cmd="npm i @ideapj/cli">
-              <span className="text-red-400">npm</span>{" "}
-              <span className="text-teal-400">i</span>{" "}
-              <span className="text-yellow-400">-g</span>{" "}
-              <span className="text-gray-400">@ideapj/cli</span>
-            </TerminalBlock>
+            <TerminalBlock
+              cmd={[{
+                copy: "npm i @ideapj/cli",
+                comment: "install cli globally",
+                code: (
+                  <>
+                    <span className="text-red-400">npm</span>{" "}
+                    <span className="text-teal-400">i</span>{" "}
+                    <span className="text-yellow-400">-g</span>{" "}
+                    <span className="text-gray-400">@ideapj/cli</span>
+                  </>
+                ),
+              },{
+                copy: "npm i @ideapj/cli",
+                code: (
+                  <>
+                    <span className="text-red-400">npm</span>{" "}
+                    <span className="text-teal-400">i</span>{" "}
+                    <span className="text-yellow-400">-g</span>{" "}
+                    <span className="text-gray-400">@ideapj/cli</span>
+                  </>
+                ),
+              }]}
+            />
           </section>
-          <section className="section-container" id="what-is-ideapj">
-            <h2 className="h2-primary text-white/90">What is Idea PJ?</h2>
+          <section className="section-container">
+            <TitleComp id="what-is-ideapj" title="What is Idea PJ?"/>
             <p className="section-body">
               Idea PJ consist of methologies, frameworks & tools that make sure
               development team delivers what client needs
@@ -132,8 +164,8 @@ const DocPage = () => {
             </p>
             <CompanyLinks />
           </section>
-          <section className="section-container" id="frameworks">
-            <h2 className="h2-primary">Frameworks</h2>
+          <section className="section-container">
+            <TitleComp id="frameworks" title="Frameworks"/>
             <p className="section-body">
               PJ frameworks add more structure on other frameworks instead of
               trying to build everything from stretch.
@@ -151,7 +183,7 @@ const DocPage = () => {
         </article>
         <SectionNav />
       </main>
-      <FooterComp/>
+      <FooterComp />
     </div>
   );
 };
