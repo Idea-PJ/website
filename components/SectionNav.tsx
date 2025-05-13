@@ -1,3 +1,4 @@
+import { ISectionTitle } from "@/types/common";
 import { cn } from "@/utils";
 import { useLenis } from "lenis/react";
 
@@ -5,7 +6,11 @@ import { useEffect, useState } from "react";
 
 const sections = ["installation", "what-is-ideapj", "frameworks"];
 
-const SectionNav: React.FC = () => {
+type IProps = {
+  menus: ISectionTitle[]
+}
+
+const SectionNav: React.FC<IProps> = ({menus}) => {
   const [active, setActive] = useState<string>("installation");
   const lenis = useLenis();
   const handleScrollTo = (id: string) => {
@@ -54,9 +59,9 @@ const SectionNav: React.FC = () => {
       <div className="flex flex-col mt-[75px] fixed ">
         <h1 className="b1-b text-white/80">On this page</h1>
         <nav className="relative flex flex-col gap-4 mt-5">
-          {navItem("installation", "Installation")}
-          {navItem("what-is-ideapj", "What is idea pj?")}
-          {navItem("frameworks", "Frameworks")}
+          {
+            menus.map(item => navItem(item.id, item.title))
+          }
         </nav>
       </div>
     </aside>

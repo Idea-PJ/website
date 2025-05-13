@@ -1,9 +1,9 @@
+import { ISectionTitle } from "@/types/common";
 import { cn } from "@/utils";
 import { useState } from "react";
 import { IoIosCheckmark, IoMdCopy } from "react-icons/io";
 
-type IProps = {
-  title: string;
+type IProps = Omit<ISectionTitle, "id"> & {
   id?: string;
   variant?: "section" | "title";
 };
@@ -12,7 +12,7 @@ const TitleComp: React.FC<IProps> = ({ title, id, variant = "section" }) => {
   const [copied, setCopied] = useState(false);
   const Title = variant == "section" ? "h2" : "h1";
   const handleCopy = () => {
-    const tag  = variant == "section" ? `#${id}` : "";
+    const tag = variant == "section" ? `#${id}` : "";
     navigator.clipboard.writeText(`${window.location.href}${tag}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset after 2s
@@ -22,7 +22,7 @@ const TitleComp: React.FC<IProps> = ({ title, id, variant = "section" }) => {
       <Title
         className={cn(
           variant == "title" ? "title1-primary" : "h2-primary",
-          "w-max",
+          "w-max"
         )}
         id={id}
       >

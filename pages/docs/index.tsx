@@ -6,6 +6,8 @@ import SideNav from "@/components/SideNav";
 import TerminalBlock from "@/components/TerminalBlock";
 import { cn } from "@/utils";
 import Link from "next/link";
+import { ISectionTitle } from "@/types/common";
+import LinkBox from "@/components/LinkBox";
 
 const companies = [
   {
@@ -40,6 +42,12 @@ const frameworks = [
     name: "Back End",
     url: "/docs/backend",
   },
+];
+
+const sections: ISectionTitle[] = [
+  { title: "Installation", id: "installation" },
+  { title: "What is Idea PJ?", id: "what-is-ideapj" },
+  { title: "Frameworks", id: "frameworks" },
 ];
 
 const CompanyLinks = () => {
@@ -92,7 +100,7 @@ const DocPage = () => {
         <SideNav />
         <article className="article-container">
           <section className="section-container">
-            <TitleComp title="Getting Started" variant="title"/>
+            <TitleComp title="Getting Started" variant="title" />
             <p className="section-body">
               Our goal is to make sure that your project delivers clients
               requirements without compromising the quality.
@@ -120,7 +128,7 @@ const DocPage = () => {
             </p>
           </section>
           <section className="section-container">
-            <TitleComp id="installation" title="Installation"/>
+            <TitleComp {...sections[0]} />
             <p className="section-body">
               PJ come with its own cli which you can use to create, update,
               matain & monitor your projects.
@@ -129,7 +137,7 @@ const DocPage = () => {
               First you need to install our cli globally on your machine.
             </p>
             <TerminalBlock
-              cmd={[{
+              cmd={{
                 copy: "npm i @ideapj/cli",
                 comment: "install cli globally",
                 code: (
@@ -140,21 +148,15 @@ const DocPage = () => {
                     <span className="text-gray-400">@ideapj/cli</span>
                   </>
                 ),
-              },{
-                copy: "npm i @ideapj/cli",
-                code: (
-                  <>
-                    <span className="text-red-400">npm</span>{" "}
-                    <span className="text-teal-400">i</span>{" "}
-                    <span className="text-yellow-400">-g</span>{" "}
-                    <span className="text-gray-400">@ideapj/cli</span>
-                  </>
-                ),
-              }]}
+              }}
             />
+            <div className="flex flex-col gap-3 mt-5">
+              <LinkBox text="Continue developmening Front End" url="/docs/frontend"/>
+              <LinkBox text="Continue developmening Back End" url="/docs/backend"/>
+            </div>
           </section>
           <section className="section-container">
-            <TitleComp id="what-is-ideapj" title="What is Idea PJ?"/>
+            <TitleComp {...sections[1]} />
             <p className="section-body">
               Idea PJ consist of methologies, frameworks & tools that make sure
               development team delivers what client needs
@@ -165,7 +167,7 @@ const DocPage = () => {
             <CompanyLinks />
           </section>
           <section className="section-container">
-            <TitleComp id="frameworks" title="Frameworks"/>
+            <TitleComp {...sections[2]} />
             <p className="section-body">
               PJ frameworks add more structure on other frameworks instead of
               trying to build everything from stretch.
@@ -181,7 +183,7 @@ const DocPage = () => {
             <FrameworkList />
           </section>
         </article>
-        <SectionNav />
+        <SectionNav menus={sections} />
       </main>
       <FooterComp />
     </div>
