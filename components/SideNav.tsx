@@ -5,7 +5,7 @@ import Link from "next/link";
 const pages = [
   {
     label: "Getting Started",
-    url: "/docs/getting-started"
+    url: "/docs"
   },
   {
     label: "Front End",

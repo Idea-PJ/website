@@ -1,8 +1,10 @@
+import DocLayout from "@/components/Layout/DocLayout";
+
 const FrontEnd: React.FC = () => {
   return (
-    <main>
+    <DocLayout sections={[]}>
       <h1>Front End</h1>
-    </main>
+    </DocLayout>
   );
 };
 

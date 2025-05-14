@@ -3,13 +3,13 @@ import Head from "next/head";
 
 const { website_url, page_title, page_description, page_meta_image } = defaults;
 
-interface IProps {
+export type ISEO =  {
   title?: string;
   description?: string;
   img?: string;
 }
 
-const SEOHeaders: React.FC<IProps> = ({
+const SEOHeaders: React.FC<ISEO> = ({
   title = page_title,
   description = page_description,
   img = page_meta_image,

@@ -1,8 +1,10 @@
+import DocLayout from "@/components/Layout/DocLayout";
+
 const GitPage: React.FC = () => {
   return (
-    <main>
+    <DocLayout sections={[]}>
       <h1>Git</h1>
-    </main>
+    </DocLayout>
   );
 };
 
