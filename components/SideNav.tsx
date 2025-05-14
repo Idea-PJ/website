@@ -2,10 +2,36 @@ import { cn } from "@/utils";
 import Link from "next/link";
 
 
-const SideNavItem = ({ text }: { text: string }) => {
+const pages = [
+  {
+    label: "Getting Started",
+    url: "/docs/getting-started"
+  },
+  {
+    label: "Front End",
+    url: "/docs/frontend"
+  },
+  {
+    label: "Back End",
+    url: "/docs/backend"
+  },
+  {
+    label: "Git",
+    url: "/docs/git"
+  },
+]
+
+
+type IPageLink = {
+  label: string;
+  url: string;
+}
+
+
+const SideNavItem:React.FC<IPageLink> = ({ label, url }) => {
   return (
     <li className="w-full 0">
-      <Link href="/docs" className={cn(
+      <Link href={url} className={cn(
         "flex items-center gap-[13px] group",
         "text-white/70 hover:text-white",
         "default-transition",
@@ -16,7 +42,7 @@ const SideNavItem = ({ text }: { text: string }) => {
         )}>{">"}</span>
         <span className={cn(
             "s1-m translate-y-[1px]",
-        )}>{text}</span>
+        )}>{label}</span>
       </Link>
     </li>
   );
@@ -26,10 +52,12 @@ const SideNav: React.FC = () => {
   return (
     <aside className={cn("w-[200px] min-h-screen h-max ")}>
       <ul className="flex flex-col gap-[20px] mt-[75px] fixed ">
-        <SideNavItem text="Getting Started" />
-        <SideNavItem text="Front End" />
-        <SideNavItem text="Back End" />
-        <SideNavItem text="Git" />
+        {
+          pages.map(item => (
+            <SideNavItem {...item} key={item.url} />
+          ))
+        }
+        
       </ul>
     </aside>
   );
