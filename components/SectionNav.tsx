@@ -4,14 +4,13 @@ import { useLenis } from "lenis/react";
 
 import { useEffect, useState } from "react";
 
-const sections = ["installation", "what-is-ideapj", "frameworks"];
-
 type IProps = {
   menus: ISectionTitle[]
 }
 
 const SectionNav: React.FC<IProps> = ({menus}) => {
   const [active, setActive] = useState<string>("installation");
+
   const lenis = useLenis();
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -23,9 +22,13 @@ const SectionNav: React.FC<IProps> = ({menus}) => {
     const handleScroll = () => {
       let closestSection = "";
       let minOffset = Number.POSITIVE_INFINITY;
-      for (const id of sections) {
+      for (const id of (menus.map(item => item.id))) {
         const el = document.getElementById(id);
+        
+        console.log({el, id})
         if (el) {
+          const branches = document.getElementById("working-on-feature");
+          console.log({branches})
           const rect = el.getBoundingClientRect();
           const offset = Math.abs(rect.top); // Distance from top of viewport
           if (offset < minOffset) {
@@ -34,13 +37,14 @@ const SectionNav: React.FC<IProps> = ({menus}) => {
           }
         }
       }
+      console.log({closestSection})
       setActive(closestSection);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // call on mount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [menus]);
   const navItem = (id: string, label: string) => (
     <button
       type="button"
