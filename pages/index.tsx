@@ -17,7 +17,10 @@ export default function Home() {
               </span>{" "}
               .
             </p>
-            <div className="relative w-[120px] h-[35px] flex-center group bg-white rounded-full">
+            <div className={cn(
+              "relative w-[120px] h-[35px] flex-center group",
+              "bg-white rounded-full"
+            )}>
               <Link
                 className={cn(
                   "text-sm w-max text-center bg-black",
@@ -29,6 +32,7 @@ export default function Home() {
               >
                 View Docs
               </Link>
+              
             </div>
           </div>
         </div>

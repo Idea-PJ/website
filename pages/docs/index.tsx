@@ -13,16 +13,6 @@ const companies = [
     url: "https://potatorocket.co/",
   },
   {
-    id: "binary-lab",
-    name: "Binary Lab",
-    url: "https://binarylab.io/",
-  },
-  {
-    id: "saya",
-    name: "Saya",
-    url: "https://www.saya.education/",
-  },
-  {
     id: "sales-sync",
     name: "Sales Sync",
     url: "https://salessync.biz/",
