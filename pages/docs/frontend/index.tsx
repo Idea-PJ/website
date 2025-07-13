@@ -3,6 +3,7 @@ import { cn } from "@/utils";
 import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
 import DocLayout from "@/components/Layout/DocLayout";
+import LinkList from "@/components/LinkList";
 
 const hostings = [
   {
@@ -27,27 +28,6 @@ const sections: ISectionTitle[] = [
   { title: "Design System", id: "design-system" },
   { title: "Hosting", id: "hosting" },
 ];
-
-const HositingList = () => {
-  return (
-    <ul className="flex flex-col gap-3 mt-5">
-      {hostings.map((item) => (
-        <li key={item.id}>
-          <Link
-            className={cn("s1-b flex gap-2 text-teal-300/80 group")}
-            href={item.url}
-            target="_blank"
-          >
-            <span className="s1-p group-hover:translate-x-[3px] default-transition">
-              {">"}
-            </span>
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
 
 const Page = () => {
   return (
@@ -170,34 +150,25 @@ const Page = () => {
         </Link>
         <h5 className="s1-b text-white/75 mt-5">Styling</h5>
         <p className="section-body">
-          Framework is only reliable when there is strong community to help you
-          when face issues & errors.
+          We focus on structure, design token, typography & accessbility in
+          design stage and copy the flow to development stage.
         </p>
       </section>
       <section className="section-container">
         <TitleComp {...sections[1]} />
         <p className="section-body">
-          Idea PJ consist of methologies, frameworks & tools that make sure
-          development team delivers what client needs
+          {"We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."}
         </p>
         <p className="section-body">
-          Idea PJ is currently matained by mutliple companies.
+          {"This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."}
         </p>
       </section>
       <section className="section-container">
         <TitleComp {...sections[2]} />
         <p className="section-body">
-          PJ frameworks add more structure on other frameworks instead of trying
-          to build everything from stretch.
+          We primarily rely on AWS Cloud Services for hosting. In most cases, we use AWS Amplify for rapid deployment and scalability. However, depending on client needs, we also support Docker or EC2-based VM hosting for more customized infrastructure setups.
         </p>
-
-        <p className="section-body">
-          {" "}
-          In that way developers who join to company are already familer with
-          the frameworks & tools. Because of that we are able to reduce onboard
-          time for developer to join the project or starting new project.
-        </p>
-        <HositingList />
+        <LinkList list={hostings}/>
       </section>
     </DocLayout>
   );

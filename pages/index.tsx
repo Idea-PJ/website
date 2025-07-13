@@ -8,11 +8,11 @@ export default function Home() {
       <SEOHeaders />
       <div className="w-screen h-screen flex justify-center items-center bg-black text-white">
         <div className="flex gap-16 items-center">
-          <h1 className="title1-primary text-[10rem]">Idea PJ</h1>
+          <h1 className="title1-primary text-[10rem]">Idea P<span className="text-primary">J</span></h1>
           <div className="max-w-[200px] flex flex-col gap-5 text">
             <p>
               Build production ready app that follows the <br />{" "}
-              <span className="bg-white text-black px-2 py-[0.1rem] text-sm font-bold">
+              <span className="text-primary font-bold">
                 industry standards
               </span>{" "}
               .

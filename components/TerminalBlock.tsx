@@ -20,7 +20,7 @@ const Prompt: React.FC<ICMD> = ({ code, copy, comment }) => {
     setTimeout(() => setCopied(false), 2000); // Reset after 2s
   };
   return (
-    <pre className="bg-gray-900 p-4 rounded-md b1 overflow-x-auto relative">
+    <pre className="px-4 py-2 rounded-md b1 overflow-x-auto relative">
       {comment && (
         <>
           <div className="s1 text-gray-500 mb-3">
@@ -45,16 +45,19 @@ const TerminalBlock: React.FC<IProps> = ({ cmd }) => {
   return (
     <div
       className={cn(
-        "bg-black text-white p-4 rounded-lg",
-        "border border-gray-700 w-full max-w-2xl",
-        "relative"
+        "bg-muted text-white p-4 rounded-lg",
+        "w-full max-w-2xl relative",
       )}
     >
-      <div className="flex items-center gap-2 mb-4 s1">
+      <div className={cn(
+        "flex items-center gap-2 mb-2 s1",
+        "border-b border-b-gray-500",
+        "pb-5"
+      )}>
         <span className="text-gray-400 s1-primary">{">"}</span>
         <span className="text-gray-300">Terminal</span>
       </div>
-      <div className="flex flex-col gap-5 mt-5">
+      <div className="flex flex-col gap-5">
         {Array.isArray(cmd) ? (
           <>
             {cmd.map((item, index) => (

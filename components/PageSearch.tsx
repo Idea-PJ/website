@@ -157,18 +157,21 @@ const PageSearch: React.FC = () => {
       <button
         type="button"
         className={cn(
-          "border border-gray-700 text-gray-500",
           "flex justify-between items-center",
-          "w-[150px] h-[35px] px-3 rounded",
-          "s1 cursor-pointer"
+          "w-[200px] h-[45px] px-5 rounded",
+          "s1 cursor-pointer",
+          "bg-[#212121] text-white",
+          "default-transition group",
+          "hover:outline-none hover:ring-1 hover:ring-[#FF5C00]/50"
         )}
         onClick={() => setShowSearch((pre) => !pre)}
       >
         Search
         <div
           className={cn(
-            "flex px-2 py-[0.1rem] items-center",
-            "text-xs gap-1 bg-gray-900 text-white/50"
+            "flex px-3 py-[0.2rem] items-center",
+            "group-hover:bg-primary default-transition",
+            "text-sm gap-1 bg-[#111] text-gray-300"
           )}
         >
           <MdKeyboardCommandKey />K

@@ -1,10 +1,9 @@
 import TitleComp from "@/components/TitleComp";
 import TerminalBlock from "@/components/TerminalBlock";
-import { cn } from "@/utils";
-import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
 import LinkBox from "@/components/LinkBox";
 import DocLayout from "@/components/Layout/DocLayout";
+import LinkList from "@/components/LinkList";
 
 const companies = [
   {
@@ -36,48 +35,6 @@ const sections: ISectionTitle[] = [
   { title: "What is Idea PJ?", id: "what-is-ideapj" },
   { title: "Frameworks", id: "frameworks" },
 ];
-
-const CompanyLinks = () => {
-  return (
-    <ul className="flex flex-col gap-3 mt-5">
-      {companies.map((item) => (
-        <li key={item.id}>
-          <Link
-            className={cn("s1-b flex gap-2 text-orange-300/80 group")}
-            href={item.url}
-            target="_blank"
-          >
-            <span className="s1-p group-hover:translate-x-[3px] default-transition">
-              {">"}
-            </span>
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const FrameworkList = () => {
-  return (
-    <ul className="flex flex-col gap-3 mt-5">
-      {frameworks.map((item) => (
-        <li key={item.id}>
-          <Link
-            className={cn("s1-b flex gap-2 text-teal-300/80 group")}
-            href={item.url}
-            target="_blank"
-          >
-            <span className="s1-p group-hover:translate-x-[3px] default-transition">
-              {">"}
-            </span>
-            {item.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-};
 
 const DocPage = () => {
   return (
@@ -123,10 +80,10 @@ const DocPage = () => {
             comment: "install cli globally",
             code: (
               <>
-                <span className="text-red-400">npm</span>{" "}
-                <span className="text-teal-400">i</span>{" "}
-                <span className="text-gray-400">@ideapj/cli</span>{" "}
-                <span className="text-yellow-400">-g</span>{" "}
+                <span className="text-primary">npm</span>{" "}
+                <span className="text-blue-400">i</span>{" "}
+                <span className="text-gray-300">@ideapj/cli</span>{" "}
+                <span className="text-primary">-g</span>{" "}
               </>
             ),
           }}
@@ -148,7 +105,7 @@ const DocPage = () => {
         <p className="section-body">
           Idea PJ is currently matained by mutliple companies.
         </p>
-        <CompanyLinks />
+        <LinkList list={companies} />
       </section>
       <section className="section-container">
         <TitleComp {...sections[2]} />
@@ -163,7 +120,13 @@ const DocPage = () => {
           the frameworks & tools. Because of that we are able to reduce onboard
           time for developer to join the project or starting new project.
         </p>
-        <FrameworkList />
+        <div className="grid grid-cols-3 gap-5 mt-5">
+        {
+          frameworks.map(item => (
+            <LinkBox {...item} text={item.name} key={item.id}/>
+          ))
+        }
+        </div>
       </section>
     </DocLayout>
   );

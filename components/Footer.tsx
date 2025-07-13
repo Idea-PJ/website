@@ -13,7 +13,7 @@ const FooterComp: React.FC = () => {
         <div className="flex flex-col gap-2">
           <h5 className="h2-primary text-white/80">About Us</h5>
           <p className="b1 text-white/60">
-            IdeaPJ is an MIT-licensed open source project maintained by <br/> multiple companies.
+            IdeaPJ is an MIT-licensed open source project <br/> maintained by  Ye Thiha.
           </p>
           <p className="s1 text-white/60 mt-5">
             &copy; {(new Date).getFullYear()} copyright MIT by Idea PJ
