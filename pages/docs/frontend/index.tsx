@@ -2,7 +2,7 @@ import TitleComp from "@/components/TitleComp";
 import { cn } from "@/utils";
 import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
-import DocLayout from "@/components/Layout/DocLayout";
+import DocLayout from "@/layouts/DocLayout";
 import LinkList from "@/components/LinkList";
 
 const hostings = [

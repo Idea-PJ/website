@@ -1,10 +1,11 @@
 import { ISectionTitle } from "@/types/common";
-import FooterComp from "../Footer";
-import HeaderComp from "../HeaderComp";
-import SectionNav from "../SectionNav";
-import SideNav from "../SideNav";
+
+import HeaderComp from "@/components/HeaderComp";
+import SectionNav from "@/components/SectionNav";
+import SideNav from "@/components/SideNav";
 import { ReactNode } from "react";
-import SEOHeaders, { ISEO } from "../SEOHeaders";
+import SEOHeaders, { ISEO } from "@/components/SEOHeaders";
+import FooterComp from "@/components/Footer";
 
 interface IProps {
   sections: ISectionTitle[];

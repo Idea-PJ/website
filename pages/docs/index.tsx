@@ -2,7 +2,7 @@ import TitleComp from "@/components/TitleComp";
 import TerminalBlock from "@/components/TerminalBlock";
 import { ISectionTitle } from "@/types/common";
 import LinkBox from "@/components/LinkBox";
-import DocLayout from "@/components/Layout/DocLayout";
+import DocLayout from "@/layouts/DocLayout";
 import LinkList from "@/components/LinkList";
 
 const companies = [

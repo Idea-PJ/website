@@ -1,4 +1,4 @@
-import DocLayout from "@/components/Layout/DocLayout";
+import DocLayout from "@/layouts/DocLayout";
 import TitleComp from "@/components/TitleComp";
 import { ISectionTitle } from "@/types/common";
 import Link from "next/link";

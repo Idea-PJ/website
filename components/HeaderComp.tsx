@@ -1,6 +1,52 @@
 import { cn } from "@/utils";
 import Link from "next/link";
 import PageSearch from "./PageSearch";
+import { useRouter } from "next/router";
+
+type IMenuItem = {
+  id: string;
+  label: string;
+  url: string;
+};
+
+const menus: IMenuItem[] = [
+  {
+    id: "docs",
+    url: "/docs",
+    label: "Docs",
+  },
+  {
+    id: "learn",
+    url: "/learn",
+    label: "Learn",
+  },
+  {
+    id: "blogs",
+    url: "/blogs",
+    label: "Blogs",
+  },
+];
+
+const MenuItem: React.FC<IMenuItem> = ({ id, url, label }) => {
+  const path = useRouter().pathname;
+  const isActive = (() => {
+    const arr = path.split("/");
+    return arr.includes(id);
+  })();
+
+  return (
+    <li className={cn(
+      "flex flex-col default-transition",
+      "h-[30px] justify-between",
+      isActive ? "text-white" : "text-white/50"
+    )}>
+      <Link href={url}>{label}</Link>
+      {isActive && (
+        <div className="w-full h-[2px] bg-primary rounded-full"></div>
+      )}
+    </li>
+  );
+};
 
 const HeaderComp: React.FC = () => {
   return (
@@ -14,22 +60,18 @@ const HeaderComp: React.FC = () => {
       >
         <Link className="grid-cols-1" href="/">
           <h1 className="h1-primary text-white/80 hover:text-white default-transition">
-            Idea P
-            <span className="text-primary">J</span>
+            Idea P<span className="text-primary">J</span>
           </h1>
         </Link>
-        <ul className={cn("b1-b flex-center gap-[25px]",
-        "-translate-x-[10px] text-white/50")}>
-          <li className="text-white flex flex-col h-[30px] justify-between">
-            <Link href="/docs">Docs</Link>
-            <div className="w-full h-[2px] bg-primary rounded-full"></div>
-          </li>
-          <li>
-            <Link href="/guide">Learn</Link>
-          </li>
-          <li>
-            <Link href="/guide">Guide</Link>
-          </li>
+        <ul
+          className={cn(
+            "b1-b flex-center gap-[25px]",
+            "-translate-x-[10px] text-white/50"
+          )}
+        >
+          {menus.map((item) => (
+            <MenuItem {...item} key={item.id} />
+          ))}
         </ul>
         <div className="w-full flex justify-end grid-cols-1">
           <PageSearch />

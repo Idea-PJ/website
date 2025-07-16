@@ -1,4 +1,4 @@
-import DocLayout from "@/components/Layout/DocLayout";
+import DocLayout from "@/layouts/DocLayout";
 
 
 const BackEnd: React.FC = () => {
