@@ -4,16 +4,12 @@ import Link from "next/link";
 
 const pages = [
   {
-    label: "Getting Started",
+    label: "Introduction",
     url: "/docs"
   },
   {
-    label: "Front End",
-    url: "/docs/frontend"
-  },
-  {
-    label: "Back End",
-    url: "/docs/backend"
+    label: "Getting Started",
+    url: "/docs/getting-started"
   },
   {
     label: "Git",

@@ -1,135 +1,176 @@
 import TitleComp from "@/components/TitleComp";
-import TerminalBlock from "@/components/TerminalBlock";
+import { cn } from "@/utils";
+import Link from "next/link";
 import { ISectionTitle } from "@/types/common";
-import LinkBox from "@/components/LinkBox";
 import DocLayout from "@/layouts/DocLayout";
 import LinkList from "@/components/LinkList";
 
-const companies = [
+const hostings = [
   {
-    id: "potato-rocket",
-    name: "Potato Rocket",
-    url: "https://potatorocket.co/",
+    id: "amplify-hosting",
+    name: "Amplify",
+    url: "/docs/frontend/amplify-hosting",
   },
   {
-    id: "sales-sync",
-    name: "Sales Sync",
-    url: "https://salessync.biz/",
-  },
-];
-const frameworks = [
-  {
-    id: "fontend",
-    name: "Front End",
-    url: "/docs/frontend",
+    id: "hosting-on-vm",
+    name: "Virtual Machine",
+    url: "/docs/frontend/hosting-on-vm",
   },
   {
-    id: "backend",
-    name: "Back End",
-    url: "/docs/backend",
+    id: "hosting-on-docker",
+    name: "Docker",
+    url: "/docs/frontend/hosting-on-docker",
   },
 ];
 
 const sections: ISectionTitle[] = [
-  { title: "Installation", id: "installation" },
-  { title: "What is Idea PJ?", id: "what-is-ideapj" },
-  { title: "Frameworks", id: "frameworks" },
+  { title: "Stack", id: "stack" },
+  { title: "Design System", id: "design-system" },
+  { title: "Hosting", id: "hosting" },
 ];
 
-const DocPage = () => {
+const Page = () => {
   return (
     <DocLayout sections={sections}>
       <section className="section-container">
-        <TitleComp title="Getting Started" variant="title" />
+        <TitleComp title="Introduction" variant="title" />
         <p className="section-body">
-          Our goal is to make sure that your project delivers clients
-          requirements without compromising the quality.
+            IdeaPJ is the Serverless Fullstack framework which is desgned to scale with the company.
+        
         </p>
         <p className="section-body">
-          PJ framework are build with progressive, scable & community in mind.
+          Idea PJ allow developer to:
         </p>
-        <h5 className="s1-b text-white/75 mt-5">Progressive</h5>
-        <p className="section-body">
-          By progress, we mean that our frameworks are design to grow with you.
-          Either you are fresher into the industry or experince senior who is in
-          field for decades, our frameworks are design to embrace productivity
-        </p>
-        <h5 className="s1-b text-white/75 mt-5">Scable</h5>
-        <p className="section-body">
-          Enterpise systems needs to scable. By scable we mean project need to
-          efficient & need to be able to add more developer when needed.
-        </p>
-        <h5 className="s1-b text-white/75 mt-5">Community</h5>
-        <p className="section-body">
-          Framework is only reliable when there is strong community to help you
-          when face issues & errors.
-        </p>
+        <ul className="list list-disc section-body">
+          <li>easily configure SEO</li>
+          <li>built secure websites</li>
+          <li>built better UI & UX for the users</li>
+          <li>
+            develop and maintain client side{`( Browsers )`} code
+          </li>
+          <li>develop and maintain server side code</li>
+        </ul>
       </section>
       <section className="section-container">
         <TitleComp {...sections[0]} />
+        <h5 className="s1-b text-white/75 mt-5">Router</h5>
         <p className="section-body">
-          PJ come with its own cli which you can use to create, update, matain &
-          monitor your projects.
+          NextJS come with two router which is page router and app router. Both
+          page router and app router come with benefits and drawback.
         </p>
         <p className="section-body">
-          First you need to install our cli globally on your machine.
+          Page Router come first, because of that most of our ( idea pj ) tech
+          stack revolve around the page router.
         </p>
-        <TerminalBlock
-          cmd={{
-            copy: "npm i @ideapj/cli -g",
-            comment: "install cli globally",
-            code: (
-              <>
-                <span className="text-primary">npm</span>{" "}
-                <span className="text-blue-400">i</span>{" "}
-                <span className="text-gray-300">@ideapj/cli</span>{" "}
-                <span className="text-primary">-g</span>{" "}
-              </>
-            ),
-          }}
-        />
-        <div className="flex flex-col gap-3 mt-5">
-          <LinkBox
-            text="Continue developmening Front End"
-            url="/docs/frontend"
-          />
-          <LinkBox text="Continue developmening Back End" url="/docs/backend" />
-        </div>
+        <h5 className="s1-b text-white/75 mt-5">State Management</h5>
+        <p className="section-body">
+          State is a special variable in a React component that, when updated,
+          automatically informs (or triggers) the component to re-render with
+          the new value.
+        </p>
+        <p className="section-body">
+          We group the state into categories, which are
+        </p>
+        <ul className="list list-disc section-body gap-5">
+          <li>
+            <h5 className="font-bold mb-2">Global State</h5>
+            <p className="mb-2">
+              A type of state defined outside of React components, typically in
+              standalone stores (e.g. Zustand) or external data layers (e.g.
+              TanStack Query). This state is then connected back to React
+              components for rendering and interaction.
+            </p>
+            <p className="mb-5">
+              In global state, data is managed outside the React component tree
+              and shared across multiple components as needed.
+            </p>
+            <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
+              <span className="group-hover:translate-x-[3px] default-transition">
+                {">"}
+              </span>
+              Learn more
+            </Link>
+          </li>
+          <li>
+            <h5 className="font-bold mb-2">Local State</h5>
+            <p className="mb-5">
+              {
+                "A type of state that is defined and managed directly within a React component using hooks like useState or useReducer. This state is scoped to the component where it's declared and is not accessible by other components unless passed down as props or shared via the Context API."
+              }
+            </p>
+            <p className="mb-5">
+              {
+                "In local state, the data lives and updates inside a single component, making it ideal for handling component-specific logic such as input fields, toggle switches, modal visibility, or temporary UI feedback."
+              }
+            </p>
+            <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
+              <span className="group-hover:translate-x-[3px] default-transition">
+                {">"}
+              </span>
+              Learn more
+            </Link>
+          </li>
+        </ul>
+        <h5 className="s1-b text-white/75 mt-5">Data Fetching & Mutations</h5>
+        <p className="section-body">
+          When fetching or mutating data from an API (separate backend), there’s
+          one key consideration:
+        </p>
+        <p className="section-body">
+          Does the data need to be available during the initial render (i.e.,
+          server-side rendering)?
+        </p>
+        <ul className="list list-disc section-body gap-5">
+          <li>
+            <h5 className="font-bold mb-2">If yes ?</h5>
+            <p className="mb-5">
+              Fetch the data using getServerSideProps to ensure the page is
+              pre-rendered with the required data.
+            </p>
+          </li>
+          <li>
+            <h5 className="font-bold mb-2">If no ?</h5>
+            <p className="mb-5">
+              {
+                "Use useFetchQuery (an extension of TanStack Query’s useQuery) to handle client-side data fetching after the page loads."
+              }
+            </p>
+          </li>
+        </ul>
+        <p className="section-body">
+          Most mutations happen on the client side, so you generally don’t need
+          to handle mutations in server-side logic.
+        </p>
+        <Link className={cn("flex gap-2 text-[#FF5C00] group")} href="/">
+          <span className="group-hover:translate-x-[3px] default-transition">
+            {">"}
+          </span>
+          Learn more
+        </Link>
+        <h5 className="s1-b text-white/75 mt-5">Styling</h5>
+        <p className="section-body">
+          We focus on structure, design token, typography & accessbility in
+          design stage and copy the flow to development stage.
+        </p>
       </section>
       <section className="section-container">
         <TitleComp {...sections[1]} />
         <p className="section-body">
-          Idea PJ consist of methologies, frameworks & tools that make sure
-          development team delivers what client needs
+          {"We’ll create a custom design system that combines the structure and discipline of frameworks like Material UI and Ant Design, with the creativity and agility of shadcn/ui and tweakcn."}
         </p>
         <p className="section-body">
-          Idea PJ is currently matained by mutliple companies.
+          {"This approach allows us to maintain consistency and scalability while staying flexible for creative, brand-driven design needs."}
         </p>
-        <LinkList list={companies} />
       </section>
       <section className="section-container">
         <TitleComp {...sections[2]} />
         <p className="section-body">
-          PJ frameworks add more structure on other frameworks instead of trying
-          to build everything from stretch.
+          We primarily rely on AWS Cloud Services for hosting. In most cases, we use AWS Amplify for rapid deployment and scalability. However, depending on client needs, we also support Docker or EC2-based VM hosting for more customized infrastructure setups.
         </p>
-
-        <p className="section-body">
-          {" "}
-          In that way developers who join to company are already familer with
-          the frameworks & tools. Because of that we are able to reduce onboard
-          time for developer to join the project or starting new project.
-        </p>
-        <div className="grid grid-cols-3 gap-5 mt-5">
-        {
-          frameworks.map(item => (
-            <LinkBox {...item} text={item.name} key={item.id}/>
-          ))
-        }
-        </div>
+        <LinkList list={hostings}/>
       </section>
     </DocLayout>
   );
 };
 
-export default DocPage;
+export default Page;
