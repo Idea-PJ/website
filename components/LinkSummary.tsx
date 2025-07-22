@@ -45,7 +45,7 @@ const LevelComp: React.FC<{
   if(!find) return <></>
   return (
     <div className="flex gap-2 text-xs font-bold justify-end items-center">
-      <h6 className="font-bold">{find.name}</h6>
+      <h6 className="font-bold section-body text-xs">Level</h6>
       <div className={cn("grid grid-cols-5 gap-[3px]", "w-[45px] h-[15px]")}>
         {[...Array(5)].map((item, index) => (
           <div

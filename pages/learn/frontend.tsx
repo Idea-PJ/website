@@ -28,13 +28,14 @@ const contents: ILinkSummary[] = [
       <>
         <p>
           {
-            "Lets explore the Idea PJ's Front End Framework by creating the simple todo app."
+            "Let's build the portoflio website which focus on SEO, Accessibility & Performance"
           }
-          {" In this tutorial we will explore "}
+          {" In this tutorial we will focus on"}
         </p>
-        <ul className="list list-disc section-body">
-          <li>Fetching and Mutation data</li>
-          <li>Styling website</li>
+        <ul className="list list-disc section-body mt-5 mb-3">
+          <li>Learning using HTML Semantic tags</li>
+          <li>Fetching data on server before render</li>
+          <li>Accessilbity Best Practice</li>
         </ul>
       </>
     ),
@@ -53,7 +54,7 @@ const contents: ILinkSummary[] = [
           }
           {" In this tutorial we will explore "}
         </p>
-        <ul className="list list-disc section-body">
+        <ul className="list list-disc section-body mt-5 mb-3">
           <li>Fetching and Mutation data</li>
           <li>Styling website</li>
         </ul>
